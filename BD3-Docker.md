@@ -10,7 +10,7 @@
 
 - **Exécuter une commande dans un conteneur spécifique :**
   `docker compose exec <service> <command>`
-  - Par exemple entrer dans un conteneur: `docker compose sfapp bash`
+  - Par exemple entrer dans un conteneur: `docker compose exec sfapp bash`
 
 - **Lister les services en cours d'exécution avec Docker Compose :**
   `docker compose ps`
@@ -41,7 +41,7 @@
 - **Se connecter à MariaDB avec un utilisateur spécifique :**
   `mariadb -u udbsfapp -p`
 
-- **Entrer le mot de passe (exemple pour `pdbsfapp`) :**
+- **Entrer le mot de passe (exemple pour `udbsfapp`) :**
   `pdbsfapp`
 
 - **Afficher la liste des bases de données :**
