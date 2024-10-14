@@ -19,19 +19,20 @@
 > [!NOTE]
 > Modes d'ouverture (flag):
 >
-> - `O_RDONLY` : Lecture seule.
-> - `O_WRONLY` : Écriture seule.
-> - `O_RDWR` : Lecture et écriture.
-> - `O_CREAT` : Crée un fichier s'il n'existe pas.
-> - `O_EXCL` : Échoue si le fichier existe déjà (avec O_CREAT).
-> - `O_TRUNC` : Tronque le fichier.
-> - `O_APPEND` : Écriture à la fin du fichier.  
+> - `O_RDONLY` : Lecture seule (le curseur est placé au début du fichier).
+> - `O_WRONLY` : Écriture seule (le curseur est placé au début du fichier).
+> - `O_RDWR` : Lecture et écriture (le curseur est placé au début du fichier).
+> - `O_CREAT` : Crée un fichier s'il n'existe pas (le curseur est placé au début du fichier si utilisé seul).
+> - `O_EXCL` : Échoue si le fichier existe déjà (utilisé avec `O_CREAT`).
+> - `O_TRUNC` : Tronque le fichier (le curseur est placé au début du fichier).
+> - `O_APPEND` : Écriture à la fin du fichier (le curseur est placé à la fin, peu importe les autres flags).
 >
 > Permissions (mode) :
 >
 > - `S_IRUSR`: Lecture pour le propriétaire.
 > - `S_IWUSR` : Écriture pour le propriétaire.
 > - `S_IRGRP`, `S_IROTH`, etc. : Permissions pour groupe/les autres.
+> Possibilité de noter en valeur octale comme avec `chmod` (0777, 0644, 0400...);
 
 ## 2. `close`
 
@@ -82,6 +83,27 @@
 - **Valeur de retour**: `newfd` en cas de succès, `-1` en cas d'erreur.
 - **Exemple**:
   `dup2(fd, STDOUT_FILENO);`
+
+## `lseek`
+
+- **Prototype**: `off_t lseek(int fd, off_t offset, int whence);`
+  
+- **Paramètres**:
+  - `fd`: Le descripteur de fichier.
+  - `offset`: Le décalage par rapport à la position définie par `whence`.
+  - `whence`: Point de référence pour le décalage :
+
+- **Valeur de retour**: La nouvelle position du curseur (en octets à partir du début du fichier) en cas de succès, `-1` en cas d'erreur.
+
+- **Exemple**:
+  `off_t position = lseek(fd, 100, SEEK_SET);`
+
+> [!NOTE]
+> Point de référence pour le décalage (whence):
+>
+> - `SEEK_SET`: Pour positionner le curseur à partir du début.
+> - `SEEK_CUR`: Pour positionner le curseur par rapport à la position actuelle.
+> - `SEEK_END`: Pour positionner le curseur à partir de la fin.
 
 ---
 
