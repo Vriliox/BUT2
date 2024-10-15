@@ -83,7 +83,7 @@ Un **système complet d'événements** est un ensemble d'événements qui couvre
 
 ### P-listes
 
-- **Quand l’utiliser ?** : Lorsque **l'ordre compte** et que la **répétition est autorisée**.
+> **Quand l’utiliser ?** : Lorsque **l'ordre compte** et que la **répétition est autorisée**.
 
 Une **p-liste** est une suite ordonnée de \( p \) éléments tirés d'un ensemble de \( n \) éléments, **avec répétition**. Cela signifie que chaque élément peut être sélectionné plusieurs fois, et l'ordre compte.
 
@@ -113,7 +113,7 @@ Les **permutations** concernent l’organisation d’éléments où **l’ordre 
 
 ### Combinaisons
 
-> **Quand l’utiliser ?** : Lorsque **l'ordre compte** mais que l’on ne prend **que quelques éléments** d’un ensemble, **sans répétition**.
+> **Quand l’utiliser ?** :  Lorsque **l'ordre ne compte pas** et que la **répétition n’est pas autorisée**. On choisit des éléments **sans tenir compte de l'ordre**.
 
 Les **combinaisons** concernent la sélection d’éléments où **l’ordre ne compte pas**. Le nombre de combinaisons de \( k \) objets parmi \( n \) est donné par :
 \[
@@ -126,7 +126,7 @@ C(8, 3) = \frac{8!}{3!(8-3)!} = 56.
 
 ### Arrangements
 
-> **Quand l’utiliser ?** :  Lorsque **l'ordre ne compte pas** et que la **répétition n’est pas autorisée**. On choisit des éléments **sans tenir compte de l'ordre**.
+> **Quand l’utiliser ?** : Lorsque **l'ordre compte** mais que l’on ne prend **que quelques éléments** d’un ensemble, **sans répétition**.
 
 Les **arrangements** concernent la sélection d’éléments où **l’ordre compte**. Le nombre d’arrangements de \( k \) éléments parmi \( n \) est donné par :
 \[
@@ -340,4 +340,33 @@ e^{u_n} - 1 \sim u_n
 \]
 \[
 (1 + u_n)^p \sim 1 + p u_n
+\]
+
+### Croissances comparées:
+- **Condition** : \( a > 0 \)
+\[
+\ln(n) \ll n^a
+\]
+- **Condition** : \( a > 1 \)
+\[
+n^a \ll a^n
+\]
+- **Condition** : \( a > 0 \)
+\[
+a^n \ll n!
+\]
+\[
+n! \ll n^n
+\]
+- **Condition** : \( a > 0 \), \( b > 0 \)
+\[
+ln(n)^b \ll n^a
+\]
+- **Condition** : \( 1 < a < b \)
+\[
+a^n \ll b^a
+\]
+- **Condition** : \( a < b \)
+\[ 
+a^n \ll b^a 
 \]
