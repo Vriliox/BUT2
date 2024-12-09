@@ -222,13 +222,37 @@ Procédure de licenciement:
 	- Demande d'autorisation de licenciement auprès de l'inspection du travail
 	- Notification du licenciement
 	
-#### Plus
+## **Protection des actifs immatériels**
 
-Le patrimoine immatériel de l'entreprise (Nom de domaine, logiciels, site internet, bases de données) est protégé par les droits d'auteur.
-Le droit moral appartient tout le temps à l'auteur.
-Le droit patrimonial qui permet l'exploitation de l'oeuvre peut être vendu, accordé...
+### 1. **Importance des actifs immatériels**
+- Clés pour la digitalisation et la compétitivité :
+  - Site web : atteindre une clientèle large.
+  - Nom de domaine : garantir la visibilité.
+  - Logiciels : répondre aux besoins clients et production.
+  - Bases de données : stocker et classer les données.
 
-Les pratiques malveillantes:
-	- Vol de données
-	- Reproduction de logiciels
-	- Typosquatting
+### 2. **Risques associés**
+- Vols (données sensibles, codes sources).
+- Pratiques frauduleuses :
+  - Typosquatting (imitations de sites officiels).
+  - Hacking.
+
+### 3. **Protections juridiques**
+- **Droits d'auteur** : Protection automatique pour logiciels/sites (patrimoniaux et moraux).
+- **Action en contrefaçon** :
+  - Sanctions pénales (amendes, prison) et civiles (dommages et intérêts).
+  - Arrêt des pratiques frauduleuses.
+- **Noms de domaine** :
+  - Réservation via l’AFNIC (premier arrivé, premier servi).
+  - Protection renforcée avec un dépôt à l’INPI.
+- **Bases de données** :
+  - Double protection :
+    - Structure (architecture) : protégée par le droit d'auteur.
+    - Contenu : protégé contre le pillage.
+
+### 4. **Créations par salariés et stagiaires**
+- **Salariés** :
+  - L'entreprise détient les droits patrimoniaux pour les logiciels créés sur le temps de travail.
+  - Le salarié conserve les droits moraux.
+- **Stagiaires** :
+  - Droits alignés sur ceux des salariés sous convention avec une entité publique ou privée.
