@@ -294,6 +294,52 @@ var capitales = ["France": "Paris", "Espagne": "Madrid"]
   }
   ```
 
+## TableView
+
+```swift
+mport UIKit
+
+// Déclaration de la classe ViewController qui hérite de UIViewController
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    // IBOutlet pour lier la table view du storyboard à cette propriété.
+    @IBOutlet weak var tableView: UITableView!
+
+    let fruits = ["Pomme", "Banane", "Cerise", "Orange", "Poire"]
+
+    // Méthode appelée après le chargement de la vue.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Définir cette classe comme la source de données et le délégué de la table view.
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+
+    // Nombre de lignes dans la section
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return fruits.count
+    }
+
+    // Configuration de chaque cellule
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Réutiliser une cellule avec l'identifiant "fruitCell" pour améliorer les performances.
+        let cell = tableView.dequeueReusableCell(withIdentifier: "fruitCell", for: indexPath)
+
+        // Définir le texte de la cellule avec le nom du fruit correspondant à la ligne.
+        cell.textLabel?.text = fruits[indexPath.row]
+
+        // Retourner la cellule configurée.
+        return cell
+    }
+
+    // Action lorsque l'utilisateur sélectionne une ligne
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\(fruits[indexPath.row]) sélectionné")
+    }
+}
+```
+
 # Lecture de Fichiers XML en Swift
 
 La lecture de fichiers XML est une compétence utile pour traiter des données structurées dans une application iOS. Voici comment vous pouvez lire un fichier XML en Swift.
