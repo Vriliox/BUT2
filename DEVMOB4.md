@@ -342,9 +342,51 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
 # Lecture de Fichiers XML en Swift
 
-La lecture de fichiers XML est une compétence utile pour traiter des données structurées dans une application iOS. Voici comment vous pouvez lire un fichier XML en Swift.
+## Rédaction d'un Fichier XML et DTD
 
-## Exemple de Lecture de Fichier XML
+### Qu'est-ce qu'un DTD ?
+
+Un Document Type Definition (DTD) définit la structure et les éléments légaux d'un document XML. Il s'agit d'un ensemble de règles qui décrivent quel type de contenu un document XML peut contenir.
+
+Voici un exemple de DTD pour le fichier XML ci-dessous :
+
+```dtd
+<!ELEMENT library (book+)>
+<!ELEMENT book (title, author, year)>
+<!ATTLIST book id CDATA #REQUIRED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+```
+
+- **`<!ELEMENT ...>`** : Déclare un élément et sa structure. Par exemple, `<!ELEMENT library (book+)>` signifie que `library` contient un ou plusieurs éléments `book`.
+- **`<!ATTLIST ...>`** : Déclare une liste d'attributs pour un élément. Par exemple, `<!ATTLIST book id CDATA #REQUIRED>` signifie que l'élément `book` doit avoir un attribut `id` de type CDATA.
+- **`#PCDATA`** : Indique que l'élément contient du texte analysé (Parsed Character Data).
+
+### Utilisation du DTD dans un Fichier XML
+
+Pour lier un DTD à un fichier XML, vous pouvez utiliser une déclaration DOCTYPE dans le fichier XML :
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library SYSTEM "library.dtd">
+<library>
+    <book id="1">
+        <title>1984</title>
+        <author>George Orwell</author>
+        <year>1949</year>
+    </book>
+    <book id="2">
+        <title>To Kill a Mockingbird</title>
+        <author>Harper Lee</author>
+        <year>1960</year>
+    </book>
+</library>
+```
+
+- **`<!DOCTYPE ...>`** : Déclare le type de document et lie le fichier XML au DTD.
+
+## Exemple de Lecture de Fichier XML avec Swift
 
 - **Utilisation de `XMLParser`** : Pour analyser un fichier XML.
 
